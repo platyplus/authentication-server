@@ -14,3 +14,4 @@ yarn-error.log*
 *.sln
 
 private.pem
+public.pem
