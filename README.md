@@ -154,9 +154,9 @@ curl -H "Content-Type: application/json" \
      http://localhost:8080/login
 ```
 
-### JWT for GraphQL Engine
+<!-- ### JWKS for GraphQL Engine
 
-<!-- Auth webhook that can be configured with Hasura GraphQl Engine is available at `/webhook`. It accepts Authorization header to validate the token against an user.
+Auth webhook that can be configured with Hasura GraphQl Engine is available at `/webhook`. It accepts Authorization header to validate the token against an user.
 
 The client just need to add `Authorization: Bearer <token>` to the request sending to GraphQL Engine.
 
