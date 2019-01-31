@@ -12,18 +12,18 @@ See this [issue](https://github.com/hasura/graphql-engine/issues/1420).
 
 Three tables are used:
 
-- `user`
-  - `id`: UUID. Primary key. Automatically generated
-  - `username`: String. Unique user identifier
-  - `password`: String. Hashed with bcrypt
+- `user`:
+  - `id`: UUID. Primary key. Automatically generated.
+  - `username`: String. Unique user identifier.
+  - `password`: String. Hashed with bcrypt.
   - `active`: Boolean. If not active, not possible to connect with this user.
-- `role`
-  - `id`: UUID. Primary key. Automatically generated
-  - `name`: String. Unique role identifier
-- `user_role`
-  - `id`: UUID. Primary key. Automatically generated
-  - `role_id`: UUID. Foreign key that references the `id` of the `role` table
-  - `user_id`: UUID. Foreign key that references the `id` of the `user` table
+- `role`:
+  - `id`: UUID. Primary key. Automatically generated.
+  - `name`: String. Unique role identifier.
+- `user_role`:
+  - `id`: UUID. Primary key. Automatically generated.
+  - `role_id`: UUID. Foreign key that references the `id` of the `role` table.
+  - `user_id`: UUID. Foreign key that references the `id` of the `user` table.
 
 ## Prerequisites
 
@@ -64,7 +64,7 @@ First you need to build the image and to tag it:
 docker build . -t platyplus/authentication:latest
 ```
 
-TODO: deploy on docker.
+TODO: document on how to deploy on docker.
 
 ### Deploy locally (developpment)
 
@@ -185,10 +185,10 @@ The endpoint (say `http://localhost:8080/webhook`) can be given as an environmen
 ## Limitations
 
 - Not tested with Heroku
-- there is not user and role management except to create a single user with no specific role. I myself do this part with a frontend app that access the database through a Hasura GraphQL endpoint.
-- The JWKS endpoint `/jwks` is not working, I could not find a way to format the modulus (n) part of the JWK that is read by the Hasura graphql-engine without error. Contribution welcome!
+- There is no user and role management except to create a single user with no specific role. I myself do this part with a frontend app that access the database through a Hasura GraphQL endpoint.
+- The JWKS endpoint `/jwks` is not working, I could not find a way to format the modulus (n) part of the JWK that is read by the Hasura graphql-engine without error. A contribution would be much appreciated!
 - This server is designed to work with one RSA key only, and does not handle its regular rotation.
-- No handling of JWT expiration
-- No automated tests
+- No handling of JWT expiration and key turnover.
+- No automated tests.
 
 Contributions are welcome!
