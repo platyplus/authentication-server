@@ -9,7 +9,6 @@ exports.up = function(knex, Promise) {
       .string('name')
       .unique()
       .notNullable()
-    table.string('password').notNullable()
   })
 }
 

@@ -1,10 +1,29 @@
-# Passport.js Auth JWT Boilerplate
+# Authentication server with Passport and JWT
 
-This is a sample auth JWT service for authenticating requests to the Hasura GraphQL Engine. This boilerplate also exposes login and signup endpoints. Note that this boilerplate can also be used in webhook mode in using the `/webhook` endpoint.
+This is a sample auth JWT service for authenticating requests to the Hasura GraphQL Engine. This also exposes login and signup endpoints. Note that this repository can also be used in webhook mode in using the `/webhook` endpoint.
+
+The endpoints to manage users are very limited (it is only possible to create a new user through the `/signup` endpoint). This is kind of a choice as this service is meant to be used for authentication only. The user and roles management can be done through the Hasura Graphql Engine or any other service accessing to the same database.
 
 ## Rationale
 
-### Schema
+TODO:
+
+## Database schema
+
+Three tables are used:
+
+- `user`
+  - `id`: UUID. Primary key. Automatically generated
+  - `username`: String. Unique user identifier
+  - `password`: String. Hashed with bcrypt
+  - `active`: Boolean. If not active, not possible to connect with this user.
+- `role`
+  - `id`: UUID. Primary key. Automatically generated
+  - `name`: String. Unique role identifier
+- `user_role`
+  - `id`: UUID. Primary key. Automatically generated
+  - `role_id`: UUID. Foreign key that references the `id` of the `role` table
+  - `user_id`: UUID. Foreign key that references the `id` of the `user` table
 
 ## Prerequisites
 
