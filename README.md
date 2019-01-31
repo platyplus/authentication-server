@@ -23,7 +23,7 @@ Note: you can find examples of keys in the repository. DO NOT USE THEM FOR PRODU
 
 - `AUTH_PUBLIC_KEY="-----BEGIN PUBLIC KEY-----\nV02/4RJi........"`
 
-  RSA private key used to deliver the JWK set. Please not that this feature is not working yet. If the variable is not set, it will try to use the public.pem file.
+  RSA private key used to deliver the JWK set. You need to escape the lines with "\n" in the variable. Please not that this feature is not working yet. If the variable is not set, it will try to use the public.pem file.
 
 - `AUTH_KEY_ID="<unique-id-for-this-key>"`
 
@@ -31,11 +31,11 @@ Note: you can find examples of keys in the repository. DO NOT USE THEM FOR PRODU
 
 - `DATABASE_URL=postgres://<username>:<password>@<host>:<port>/<database_name>`
 
-  URL to connect to the Postgres database. The format is . For instance, `DATABASE_URL=postgres://postgres:@localhost:5432/postgres`
+  URL to connect to the Postgres database. The format is . For instance: `DATABASE_URL=postgres://postgres:@localhost:5432/postgres`
 
 - `PORT=8080`
 
-The port the server will listen to
+The port the server will listen to.
 
 ### Build and deploy on Docker
 
@@ -45,7 +45,7 @@ First you need to build the image and to tag it:
 docker build . -t platyplus/authentication:latest
 ```
 
-Don't forget to set your environment variables.
+TODO: deploy.
 
 ### Deploy locally
 
@@ -114,7 +114,7 @@ On success, we get the response:
 {
   "id": "907f0dc7-6887-4232-8b6e-da3d5908f137",
   "username": "test123",
-  "roles": ["manager", "user"],
+  "roles": ["user"],
   "token": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoicGlsb3UiLCJodHRwczovL2hhc3VyYS5pby9qd3QvY2xhaW1zIjp7IngtaGFzdXJhLWFsbG93ZWQtcm9sZXMiOlsibWFuYWdlciIsInVzZXIiXSwieC1oYXN1cmEtZGVmYXVsdC1yb2xlIjoidXNlciIsIngtaGFzdXJhLXVzZXItaWQiOiI5MDdmMGRjNy02ODg3LTQyMzItOGI2ZS1kYTNkNTkwOGYxMzcifSwiaWF0IjoxNTQ4OTI5MTY2LCJleHAiOjE1NTE1MjExNjYsInN1YiI6IjkwN2YwZGM3LTY4ODctNDIzMi04YjZlLWRhM2Q1OTA4ZjEzNyJ9.hoY-lZ-6rbN_WVFy0Taxbf6QCtDPaTm407l6opv2bz-Hui9T7l7aafStsx9w-UscWUFWHpeStIo1ObV-lT8-j9t-nw9q5fr8wuO2zyKBMXjhD57ykR6BcKvJQMxE1JjyetVLHpj5r4mIb7_kaA8Dj8Vy2yrWFReHXDczYpQGc43mxxC05B5_xdScQrSbs9MkgQRh-Z5EknlLKWkpbuxPvoyWcH1wgLum7UABGNO7drvmcDDaRk6Lt99A3t40sod9mJ3H9UqdooLOfBAg9kcaCSgqWDkmCLBwtM8ONbKZ4cEZ8NEseCQYKqIoyHQH9vbf9Y6GBaJVbBoEay1cI48Hig"
 }
 ```
@@ -150,6 +150,7 @@ The endpoint (say `http://localhost:8080/webhook`) can be given as an environmen
 ## Limitations
 
 - Not tested with Heroku
+- there is not user and role management except to create a single user with no specific role. I myself do this part with a frontend app that access the database through a Hasura GraphQL endpoint.
 - The JWKS endpoint `/jwks` is not working, I could not find a way to format the "n" part of the JWK that is read by the Hasura graphql-engine without error. Contribution welcome!
 - This server is designed to work with one RSA key only, and does not handle its regular rotation.
 - No handling of JWT expiration
