@@ -56,7 +56,7 @@ Note: you can find examples of keys in the repository. DO NOT USE THEM FOR PRODU
 
 The port the server will listen to.
 
-### Build and deploy on Docker
+### Build and deploy on Docker (for production purposes)
 
 First you need to build the image and to tag it:
 
@@ -66,7 +66,7 @@ docker build . -t platyplus/authentication:latest
 
 TODO: deploy on docker.
 
-### Deploy locally
+### Deploy locally (for developpment purposes)
 
 ```bash
 # Clone the repo
@@ -117,7 +117,7 @@ TODO: test deployment with heroku, and rewrite this part
 
 ## Usage
 
-### Signup/Login
+### Signup
 
 Once deployed or started locally, we can create an user using `/signup` API like below:
 
@@ -138,7 +138,9 @@ On success, we get the response:
 }
 ```
 
-We can also use `/login` API to fetch the JWT,
+### Login
+
+Let's use the `/login` endpoint to fetch the user information and JWT:
 
 ```bash
 curl -H "Content-Type: application/json" \
