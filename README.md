@@ -6,7 +6,7 @@ The endpoints to manage users are very limited (it is only possible to create a 
 
 ## Rationale
 
-See this [issue](https://github.com/hasura/graphql-engine/issues/1420)
+See this [issue](https://github.com/hasura/graphql-engine/issues/1420).
 
 ## Database schema
 
@@ -32,8 +32,6 @@ Three tables are used:
 
 ## Getting Started
 
-Note: you can find examples of keys in the repository. DO NOT USE THEM FOR PRODUCTION!
-
 ### Environment variables
 
 - `AUTH_PRIVATE_KEY="-----BEGIN RSA PRIVATE KEY-----\nypPTIfSzZ399o........"`
@@ -55,6 +53,8 @@ Note: you can find examples of keys in the repository. DO NOT USE THEM FOR PRODU
 - `PORT=8080`
 
 The port the server will listen to.
+
+_Note: you can find examples of keys in the repository. DO NOT USE THEM FOR PRODUCTION!_
 
 ### Build and deploy on Docker (for production purposes)
 
