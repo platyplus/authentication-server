@@ -34,6 +34,8 @@ Three tables are used:
 
 ### Environment variables
 
+_Note: you can find examples of RSA keys in the repository. **DO NOT USE THEM FOR PRODUCTION!**_
+
 - `AUTH_PRIVATE_KEY="-----BEGIN RSA PRIVATE KEY-----\nypPTIfSzZ399o........"`
 
   RSA private key used to sign the JWT. You need to escape the lines with "\n" in the variable. If the variable is not set, it will try to use the private.pem file.
@@ -53,8 +55,6 @@ Three tables are used:
 - `PORT=8080`
 
 The port the server will listen to.
-
-_Note: you can find examples of keys in the repository. DO NOT USE THEM FOR PRODUCTION!_
 
 ### Build and deploy on Docker (for production purposes)
 
@@ -114,6 +114,18 @@ TODO: test deployment with heroku, and rewrite this part
 # (Note) this step creates a "users" table in the database
  heroku run knex migrate:latest
 ``` -->
+
+### Configure the Hasura GraphQL Engine
+
+Run the Hasura GraphQL engine with the `HASURA_GRAPHQL_JWT_SECRET` set like this:
+
+```json
+{ "type": "RS256", "key": "${AUTH_PUBLIC_KEY}" }
+```
+
+WHere `AUTH_PUBLIC_KEY` is your RSA public key in PEM format, with the line breaks escaped with "\n".
+
+More information in the [Hasura docs](https://docs.hasura.io/1.0/graphql/manual/auth/jwt.html).
 
 ## Usage
 
