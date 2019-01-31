@@ -170,7 +170,7 @@ The endpoint (say `http://localhost:8080/webhook`) can be given as an environmen
 
 - Not tested with Heroku
 - there is not user and role management except to create a single user with no specific role. I myself do this part with a frontend app that access the database through a Hasura GraphQL endpoint.
-- The JWKS endpoint `/jwks` is not working, I could not find a way to format the "n" part of the JWK that is read by the Hasura graphql-engine without error. Contribution welcome!
+- The JWKS endpoint `/jwks` is not working, I could not find a way to format the modulus (n) part of the JWK that is read by the Hasura graphql-engine without error. Contribution welcome!
 - This server is designed to work with one RSA key only, and does not handle its regular rotation.
 - No handling of JWT expiration
   Contributions are welcome!
