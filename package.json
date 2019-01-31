@@ -1,10 +1,10 @@
 {
-  "name": "passport-js-auth-webhook",
+  "name": "platyplus-authentication-server",
   "version": "1.0.0",
   "engines": {
     "node": "11.4.0"
   },
-  "description": "A boilerplate for Hasura Graphql Engine auth webhook with passport js",
+  "description": "A simple authentication service to deliver JWT with Hasura claims, based on users with multiples roles stored in a Postgres database.",
   "scripts": {
     "test": "echo \"TODO: no test specified\" && exit 0",
     "start": "node app.js",
@@ -12,14 +12,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/hasura/graphql-engine.git"
+    "url": "git+https://github.com/platyplus/authentication-server"
   },
-  "author": "Aravind Shankar",
+  "author": "Pierre-Louis Mercereau",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/hasura/graphql-engine/issues"
+    "url": "https://github.com/platyplus/authentication-server/issues"
   },
-  "homepage": "https://github.com/hasura/graphql-engine/tree/master/community/boilerplates/auth-webhooks/passport-js#readme",
+  "homepage": "https://github.com/platyplus/authentication-server",
   "dependencies": {
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.18.3",
