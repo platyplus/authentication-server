@@ -146,7 +146,7 @@ curl -H "Content-Type: application/json" \
      http://localhost:8080/login
 ```
 
-It will then send back user information including the JWT in the same format as the above `/signup` endooint.
+It will then send back user information including the JWT in the same format as the above `/signup` endoint.
 
 You can use this boilerplate as a webhook server in using the `/webhook` endpoint to fetch a webhook token:
 
