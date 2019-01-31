@@ -56,7 +56,7 @@ _Note: you can find examples of RSA keys in the repository. **DO NOT USE THEM FO
 
 The port the server will listen to.
 
-### Build and deploy on Docker (for production purposes)
+### Build and deploy on Docker (production)
 
 First you need to build the image and to tag it:
 
@@ -66,7 +66,7 @@ docker build . -t platyplus/authentication:latest
 
 TODO: deploy on docker.
 
-### Deploy locally (for developpment purposes)
+### Deploy locally (developpment)
 
 ```bash
 # Clone the repo
@@ -189,5 +189,6 @@ The endpoint (say `http://localhost:8080/webhook`) can be given as an environmen
 - The JWKS endpoint `/jwks` is not working, I could not find a way to format the modulus (n) part of the JWK that is read by the Hasura graphql-engine without error. Contribution welcome!
 - This server is designed to work with one RSA key only, and does not handle its regular rotation.
 - No handling of JWT expiration
+- No automated tests
 
 Contributions are welcome!
