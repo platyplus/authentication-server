@@ -66,6 +66,8 @@ docker build . -t platyplus/authentication:latest
 
 TODO: document on how to deploy on docker.
 
+You can also have a look at [this docker-compose gist[](https://gist.github.com/plmercereau/b8503c869ffa2b5d4e42dc9137b56ae1) to see how I use this service in a docker stack with Hasura and [Traefik](https://traefik.io/).
+
 ### Deploy locally (developpment)
 
 ```bash
