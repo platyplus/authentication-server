@@ -189,6 +189,7 @@ The endpoint (say `http://localhost:8080/webhook`) can be given as an environmen
 - The JWKS endpoint `/jwks` is not working, I could not find a way to format the modulus (n) part of the JWK that is read by the Hasura graphql-engine without error. A contribution would be much appreciated!
 - This server is designed to work with one RSA key only, and does not handle its regular rotation.
 - No handling of JWT expiration and key turnover.
+- This server is not (yet?) designed to handle authentication through other services such as Google, Github... It would be nice to do so, but to keep this server as a proxy that would add the Hasura claims in querying the database about the roles of the user. Comments or any contribution are welcome as well on this one.
 - No automated tests.
 
 Contributions are welcome!
