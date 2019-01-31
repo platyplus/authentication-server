@@ -6,7 +6,7 @@ The endpoints to manage users are very limited (it is only possible to create a 
 
 ## Rationale
 
-TODO:
+See this [issue](https://github.com/hasura/graphql-engine/issues/1420)
 
 ## Database schema
 
