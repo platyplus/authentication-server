@@ -123,7 +123,7 @@ Run the Hasura GraphQL engine with the `HASURA_GRAPHQL_JWT_SECRET` set like this
 { "type": "RS256", "key": "<AUTH_PUBLIC_KEY>" }
 ```
 
-WHere `<AUTH_PUBLIC_KEY>` is your RSA public key in PEM format, with the line breaks escaped with "\n".
+Where `<AUTH_PUBLIC_KEY>` is your RSA public key in PEM format, with the line breaks escaped with "\n".
 
 More information in the [Hasura docs](https://docs.hasura.io/1.0/graphql/manual/auth/jwt.html).
 
