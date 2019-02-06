@@ -84,6 +84,10 @@ npm install
 openssl genrsa -out private.pem 2048
 openssl rsa -in private.pem -pubout > public.pem
 
+# print the keys in an escaped format
+awk -v ORS='\\n' '1' private.pem
+awk -v ORS='\\n' '1' public.pem
+
 export DATABASE_URL=postgres://postgres:@localhost:5432/postgres
 
 # Apply migrations
@@ -193,5 +197,6 @@ The endpoint (say `http://localhost:8080/webhook`) can be given as an environmen
 - No handling of JWT expiration and key turnover.
 - This server is not (yet?) designed to handle authentication through other services such as Google, Github... It would be nice to do so, but to keep this server as a proxy that would add the Hasura claims in querying the database about the roles of the user. Comments or any contribution are welcome as well on this one.
 - No automated tests.
+- another cool feature to be would be to expose the endpoints through hasura remote schema, and not directly to the client
 
 Contributions are welcome!
