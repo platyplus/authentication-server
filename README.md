@@ -98,38 +98,21 @@ knex migrate:latest
 npm start
 ```
 
-<!-- ### Deploy with Heroku
-
-TODO: test deployment with heroku, and rewrite this part
-
-```bash
- # Create heroku app
- heroku create <app-name>
-
- # Create PostgreSQL addon
- heroku addons:create heroku-postgresql:hobby-dev -a <app-name>
-
- # Add git remote
- git remote add heroku https://git.heroku.com/<app-name>.git
-
- # Push changes to heroku
- # Note: You need to run this command from the toplevel of the working tree (graphql-enginej)
- git subtree push --prefix community/boilerplates/auth-webhooks/passport-js heroku master
-
- # Apply migrations
-# (Note) this step creates a "users" table in the database
- heroku run knex migrate:latest
-``` -->
-
 ### Configure the Hasura GraphQL Engine
 
-Run the Hasura GraphQL engine with the `HASURA_GRAPHQL_JWT_SECRET` set like this:
+Run the Hasura GraphQL engine with `HASURA_GRAPHQL_JWT_SECRET` set like this:
 
 ```json
 { "type": "RS256", "key": "<AUTH_PUBLIC_KEY>" }
 ```
 
 Where `<AUTH_PUBLIC_KEY>` is your RSA public key in PEM format, with the line breaks escaped with "\n".
+
+You can also configure the server in JWKS mode and set `HASURA_GRAPHQL_JWT_SECRET` like this:
+
+```json
+{ "type": "RS256", "jwk_url": "hostname:port/jwks" }
+```
 
 More information in the [Hasura documentation](https://docs.hasura.io/1.0/graphql/manual/auth/jwt.html).
 
@@ -175,18 +158,6 @@ curl -H "Content-Type: application/json" \
      -d'{"username": "test123", "password": "test123"}' \
      http://localhost:8080/login
 ```
-
-<!-- ### JWKS for GraphQL Engine
-
-Auth webhook that can be configured with Hasura GraphQl Engine is available at `/webhook`. It accepts Authorization header to validate the token against an user.
-
-The client just need to add `Authorization: Bearer <token>` to the request sending to GraphQL Engine.
-
-The endpoint (say `http://localhost:8080/webhook`) can be given as an environment variable `HASURA_GRAPHQL_AUTH_HOOK` to GraphQL Engine.
-
-[Read more about webhook here](https://docs.hasura.io/1.0/graphql/manual/auth/webhook.html). -->
-
-<!-- TODO: JWKS endpoint -->
 
 ## Limitations
 
