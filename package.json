@@ -2,7 +2,7 @@
   "name": "platyplus-authentication-server",
   "version": "1.0.0",
   "engines": {
-    "node": "11.4.0"
+    "node": "11.15.0"
   },
   "description": "A simple authentication service to deliver JWT with Hasura claims, based on users with multiples roles stored in a Postgres database.",
   "scripts": {
