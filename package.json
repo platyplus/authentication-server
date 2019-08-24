@@ -35,7 +35,7 @@
     "passport": "0.4.0",
     "passport-http-bearer": "1.0.1",
     "passport-local": "1.0.0",
-    "pg": "7.4.3",
+    "pg": "7.12.1",
     "rasha": "1.2.5",
     "util": "0.12.1"
   }
