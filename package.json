@@ -29,7 +29,7 @@
     "express-validator": "6.1.1",
     "fnv-plus": "1.2.12",
     "jsonwebtoken": "8.5.1",
-    "knex": "0.15.2",
+    "knex": "0.19.3",
     "objection": "1.2.6",
     "objection-db-errors": "1.0.0",
     "passport": "0.4.0",
