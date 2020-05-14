@@ -1,4 +1,4 @@
-Note: this repository is no longer maintained as all its features have been added to [Hasura Backend Plus](https://github.com/nhost/hasura-backend-plus)
+_Note_: this repository is no longer maintained as all its features have been added to __[Hasura Backend Plus](https://github.com/nhost/hasura-backend-plus)__
 
 # Authentication with JWT, Hasura claims and multiple roles
 
